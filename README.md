@@ -18,7 +18,7 @@ t%d\n - set the torque limit of servo eg. 't500\n'
 s%d\n - set the speed of servo eg. 's1000\n'
 
 
-FROM MY PROJECT NOTES:
+# From my project notes:
 
 
 I used MX28AT dynamixels for my gripper design and ran into a bunch of not obvious problems because the Robotis documentation is awful. So this is a very brief guide to setting up dynamixels for USB control via serial commands. Eventually I'll put the code online.
@@ -53,15 +53,10 @@ Dynamixel documentation is very spread out and many of the documents are wrong. 
 A good way of checking settings is to dump all of the registers to serial using:
 ```C
 for(int i = 0; i <74; i++){
-
     SerialUSB.print("i is :  ");
-    
     SerialUSB.print(i);
-    
     SerialUSB.print("   value is :  ");
-    
     SerialUSB.println(Dxl.readByte(1,i));
-    
 }
 ```
  
