@@ -5,8 +5,13 @@ This code was written to control the Yale openHand using 4 dynamixel MX28AT serv
 
 Download the serialReceiver code onto the OpenCM9 then send it serial commands from a PC terminal. It is set up for control of 4 servos but can easily be modified for other numbers. Most of the configuration variables are in this file.
 
-There are also a few matlab functions to do basic hand control. 
+There are also a few matlab functions to do basic hand control. These just act as serial wrappers.
 
+The most important commands are:
+a%d\n - set the active servo number (based on ID) eg. 'a1\n'
+p%d\n - set the position of active servo eg. 'p1500\n'
+t%d\n - set the torque limit of servo eg. 't500\n'
+s%d\n - set the speed of servo eg. 's1000\n'
 
 FROM MY PROJECT NOTES:
 
