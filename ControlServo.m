@@ -1,3 +1,6 @@
+%This program connects to the openCM9 over serial and moves it around to
+%demonstrate that it is connected
+
 if(~exist('s'))
     s = serial('COM7');
     fopen(s);
@@ -17,8 +20,7 @@ closeHand(s, closeTo);
 pause(3);
 closeHand(s, 0);
 
-
-while(1)
+%Do some stuff
 fprintf(s, 'a2');
 fprintf(s, 'p%d\n', closeTo);
 
@@ -40,4 +42,3 @@ fprintf(s, 'a4');
 fprintf(s, 'p0');
 
 pause(1);
-end
