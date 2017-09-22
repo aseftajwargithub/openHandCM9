@@ -8,11 +8,15 @@ Download the serialReceiver code onto the OpenCM9 then send it serial commands f
 There are also a few matlab functions to do basic hand control. These just act as serial wrappers.
 
 The most important commands are:
+
 a%d\n - set the active servo number (based on ID) eg. 'a1\n'
 
 p%d\n - set the position of active servo eg. 'p1500\n'
+
 t%d\n - set the torque limit of servo eg. 't500\n'
+
 s%d\n - set the speed of servo eg. 's1000\n'
+
 
 FROM MY PROJECT NOTES:
 
@@ -47,12 +51,19 @@ OpenCM9 will not auto assign ID numbers, so if using more than one dynamixel you
 Dynamixel documentation is very spread out and many of the documents are wrong. I am still not quite sure what the following means:
 
 A good way of checking settings is to dump all of the registers to serial using:
+```C
 for(int i = 0; i <74; i++){
+
     SerialUSB.print("i is :  ");
+    
     SerialUSB.print(i);
+    
     SerialUSB.print("   value is :  ");
+    
     SerialUSB.println(Dxl.readByte(1,i));
+    
 }
+```
  
 The OpenCM9 IDE (looks like the arduino IDE and is written in Java) is very basic, not all libraries are listed at http://support.robotis.com/en/software/robotis_opencm/api_reference.htm but some are. It does not support standard Arduino libraries or standard C libraries (eg. no Strings or easy use of header files). It also seems to use the Maple serial library at http://docs.leaflabs.com/static.leaflabs.com/pub/leaflabs/maple-docs/0.0.12/lang/api/serialusb.html.
 Because of this, I have tried to make the code on the CM9 as basic and robust as possible. All control, error handling, formatting and synchronisation should be done on the host computer.
