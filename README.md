@@ -9,6 +9,7 @@ There are also a few matlab functions to do basic hand control. These just act a
 
 The most important commands are:
 a%d\n - set the active servo number (based on ID) eg. 'a1\n'
+
 p%d\n - set the position of active servo eg. 'p1500\n'
 t%d\n - set the torque limit of servo eg. 't500\n'
 s%d\n - set the speed of servo eg. 's1000\n'
