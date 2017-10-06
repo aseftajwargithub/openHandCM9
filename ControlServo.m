@@ -1,5 +1,5 @@
 %This program connects to the openCM9 over serial and moves it around to
-%demonstrate that it is connected
+%demonstrate that it is connected. You should run this first.
 
 if(~exist('s'))
     s = serial('COM7');
