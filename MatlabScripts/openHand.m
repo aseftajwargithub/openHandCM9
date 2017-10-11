@@ -22,6 +22,7 @@ fprintf(s, 'a2');
 fprintf(s, 'p%d\n', position);
 
 fprintf(s, 'a3');
+pause(0.01)
 fprintf(s, 'p%d\n', position);
 
 fprintf(s, 'a4');
