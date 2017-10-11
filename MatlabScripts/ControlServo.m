@@ -2,7 +2,7 @@
 %demonstrate that it is connected
 
 if(~exist('s'))
-    s = serial('COM7');
+    s = serial('COM9');
     fopen(s);
     disp('Opening Serial');
 end
@@ -16,8 +16,10 @@ pause(2);
 
 closeTo = 1600;
 
+disp('Closing Hand');
 closeHand(s, closeTo);
 pause(1);
+disp('Opening Hand');
 closeHand(s, 0);
 
 % %Do some stuff
