@@ -117,13 +117,10 @@ void usbInterrupt(byte* buffer, byte nCount){
 // THIS IS WHERE STUFF HAPPENS // -------------------------------------------------------------------------------------------------------
 void parseString(){
 
-  SerialUSB.println("inString at zero is: ");
-  SerialUSB.println((char)inString[0]);
-
   //Parse String
   if(inString[0] == -1){
       //Serial was not actually read
-      SerialUSB.println("ReadError");
+      
   }
   //Status characters
   else if((char)inString[0] == 'l'){
@@ -132,14 +129,12 @@ void parseString(){
   }
   else if((char)inString[0] == 's'){
       setSpeed = parseUInt(inString, stringLength);
-      SerialUSB.println("set speed is now");
-      SerialUSB.println(setSpeed);
+      
       Dxl.goalSpeed(currentServo, setSpeed);
   }
   else if((char)inString[0] == 'p'){
       setPos = parseUInt(inString, stringLength);
-      SerialUSB.println("set pos is now");
-      SerialUSB.println(setPos);
+      
       setPos = setPos;
       
       switch(currentServo){
@@ -174,16 +169,13 @@ void parseString(){
       Dxl.writeWord(currentServo,34, torque);
       delay(50);
 
-      SerialUSB.println("set torque is now");
-      SerialUSB.println(torque);
       
   }
   else if((char)inString[0] == 'a'){
       currentServo = parseUInt(inString, stringLength);
-      SerialUSB.println("Active servo is now");
-      SerialUSB.println(currentServo);
+      
   }
-  else if((char)inString[0] == 's'){
+  else if((char)inString[0] == 'u'){
       sendStatus = true;
   }
 }
@@ -203,7 +195,7 @@ unsigned int parseUInt(byte* buffer, byte nCount){
 
 void loop() {
   if(sendStatus){
-    SerialUSB.println("Status:");
+    
     //Position
     SerialUSB.print(Dxl.readWord(currentServo, 36));
     SerialUSB.print(",");

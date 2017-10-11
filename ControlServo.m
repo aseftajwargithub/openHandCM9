@@ -17,28 +17,28 @@ pause(2);
 closeTo = 1600;
 
 closeHand(s, closeTo);
-pause(3);
+pause(1);
 closeHand(s, 0);
 
-%Do some stuff
-fprintf(s, 'a2');
-fprintf(s, 'p%d\n', closeTo);
-
-fprintf(s, 'a3');
-fprintf(s, 'p%d\n', closeTo);
-
-fprintf(s, 'a4');
-fprintf(s, 'p%d\n', closeTo);
-
-pause(5);
-
-fprintf(s, 'a2');
-fprintf(s, 'p0');
-
-fprintf(s, 'a3');
-fprintf(s, 'p0');
-
-fprintf(s, 'a4');
-fprintf(s, 'p0');
-
-pause(1);
+% %Do some stuff
+% fprintf(s, 'a2');
+% fprintf(s, 'p%d\n', closeTo);
+% 
+% fprintf(s, 'a3');
+% fprintf(s, 'p%d\n', closeTo);
+% 
+% fprintf(s, 'a4');
+% fprintf(s, 'p%d\n', closeTo);
+% 
+% pause(5);
+% 
+% fprintf(s, 'a2');
+% fprintf(s, 'p0');
+% 
+% fprintf(s, 'a3');
+% fprintf(s, 'p0');
+% 
+% fprintf(s, 'a4');
+% fprintf(s, 'p0');
+% 
+% pause(1);
