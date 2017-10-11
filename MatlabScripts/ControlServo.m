@@ -2,7 +2,7 @@
 %demonstrate that it is connected. You should run this first.
 
 if(~exist('s'))
-    s = serial('COM7');
+    s = serial('/dev/ttyACM0');
     fopen(s);
     disp('Opening Serial');
 end
