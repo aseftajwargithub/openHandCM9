@@ -21,6 +21,7 @@ closeHand(s, closeTo);
 pause(1);
 disp('Opening Hand');
 closeHand(s, 0);
+disp('Initialised');
 
 % %Do some stuff
 % fprintf(s, 'a2');
