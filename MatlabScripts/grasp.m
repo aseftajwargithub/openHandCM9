@@ -3,7 +3,7 @@ function grasp(s,torque,degrees)
 %   Takes a serial object, position and torque. Will synchronously close
 %   the fingers to this position with the set torque.
 pauseTime = 0.01;
-position = 2500;
+position = 2000;
 
 if(~exist('torque'))
     torque = 600;
@@ -38,6 +38,8 @@ fprintf(s, 't600');
 pause(pauseTime);
 fprintf(s, 'p%d\n', rotation);
 pause(pauseTime);
+
+pause(0.5);
 
 fprintf(s, 'a2');
 pause(pauseTime);

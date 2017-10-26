@@ -2,7 +2,9 @@
 %demonstrate that it is connected
 
 if(~exist('s'))
-    s = serial('COM9');
+    % s = serial('COM9');
+    s = serial('/dev/ttyACM0');
+    
     fopen(s);
     disp('Opening Serial');
 end
