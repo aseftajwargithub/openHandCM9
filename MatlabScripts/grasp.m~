@@ -1,9 +1,8 @@
-function grasp(s,torque,degrees)
+function grasp(s,torque,rotation)
 %closeHand Closes the hand to a given position with a chosen torque
 %   Takes a serial object, position and torque. Will synchronously close
 %   the fingers to this position with the set torque.
 pauseTime = 0.01;
-position = 2500;
 
 if(~exist('torque'))
     torque = 600;
