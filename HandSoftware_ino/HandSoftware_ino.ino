@@ -53,6 +53,7 @@ Dynamixel Dxl(DXL_BUS_SERIAL3);
 byte inString[20];
 int stringLength = 0;
 boolean sendStatus = false;
+boolean streamData = false;
 
 
 void setup() {
@@ -175,8 +176,11 @@ void parseString(){
       currentServo = parseUInt(inString, stringLength);
       
   }
-  else if((char)inString[0] == 'u'){
+  else if((char)inString[0] == 'i'){
       sendStatus = true;
+  }
+  else if((char)inString[0] == 'u'){
+      streamData = !streamData;
   }
 }
 // END STUFF HAPPENING // -----------------------------------------------------------------------------------------------------------------------------------------
@@ -194,7 +198,7 @@ unsigned int parseUInt(byte* buffer, byte nCount){
 }
 
 void loop() {
-  if(sendStatus){
+  if(sendStatus || streamData){
     
     //Position
     SerialUSB.print(Dxl.readWord(currentServo, 36));
